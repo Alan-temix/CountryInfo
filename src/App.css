@@ -1,5 +1,7 @@
 body {
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
+  background: rgb(62,0,255);
+  background: linear-gradient(90deg, rgba(62,0,255,1) 0%, rgba(2,111,162,1) 72%); 
 }
 
 .App {
@@ -13,7 +15,20 @@ body {
 
 /* Customize */
 nav.navbar {
-  margin-bottom: 20px;
+  background-color: #170055 !important;
+}
+
+.nav-item > a {
+  color: white !important;
+}
+
+nav.navbar button{
+  border: 2px solid #198754;
+}
+
+.navbar-light .navbar-toggler {
+  background-color: #AE00FB;
+  border-color: #AE00FB;
 }
 
 .navbar-collapse {
@@ -41,6 +56,36 @@ nav.navbar {
   /* width: 100%; */
 }
 
+.search-container {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.search-container__items {
+  margin: 10px 0;
+}
+
+/*  */
+.custom-shape-divider-top-1631592232 {
+  top: 0;
+  background: rgb(62,0,255);
+  background: linear-gradient(90deg, rgba(62,0,255,1) 0%, rgba(2,111,162,1) 72%); 
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1631592232 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 18px;
+}
+
+.custom-shape-divider-top-1631592232 .shape-fill {
+  fill: #170055;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -60,6 +105,27 @@ nav.navbar {
 
 .App-link {
   color: #61dafb;
+}
+
+@media (max-width: 1000px) {
+  /* .countries-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .countries-container .card {
+    width: 50%;
+  } */
+  .countries-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .countries-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @keyframes App-logo-spin {
