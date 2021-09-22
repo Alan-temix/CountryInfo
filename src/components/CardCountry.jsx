@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 
-const CardCountry = ({ name, image, alphaCode }) => {
+const CardCountry = ({ name, image, alphaCode, capital }) => {
 
     return(
         <Card>
         <Card.Img variant="top" src={image}/>
             <Card.Body>
-                <Card.Title>{name}</Card.Title>
+                <Card.Title>{name} Capital: {capital}</Card.Title>
                 <Card.Text>
                     Some quick example text to build on the card title and make up the bulk of
                     the card's content.

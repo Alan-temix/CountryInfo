@@ -24,10 +24,9 @@ const Search = () => {
     return(
     <div>
         <Header />
-        <h2>{data.status ? (`No se ha encontrado ningún país con el nombre ${countryName}, verifica que lo hayas escrito correctamente`) : ("Posibles resultados: ")}</h2>
-        <div className="search-container">
-        {/* {data && data.map((item) => (<div className="search-container__items"><CardCountry key={item.numericCode} name={item.name} image={item.flag} alphaCode={item.alpha3Code} /></div> ))} */}
-        {data.status ? (null) : data && data.map((item) => (<div className="search-container__items"><CardCountry key={item.numericCode} name={item.name} image={item.flag} alphaCode={item.alpha3Code} /></div> )) }
+        <h2>{data.status ? (<div className="px-5 mt-4">No se ha encontrado ningún país con el nombre "<span className="text-danger">{countryName}</span>", verifica que lo hayas escrito correctamente</div>) : (<div className="px-4 mt-4">Posibles resultados para "{countryName}":</div>)}</h2>
+        <div className="p-4 countries-container">
+        {data.status ? (null) : data && data.map((item) => (<CardCountry key={item.numericCode} name={item.name} image={item.flag} alphaCode={item.alpha3Code} /> )) }
         </div>
     </div>
     );
