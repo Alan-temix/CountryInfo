@@ -20,10 +20,13 @@ function App() {
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/country/:countryCode">
+        <Route path="/country/:countryCode" exact>
           <CountryInfo />
         </Route>
-        <Route path="/search/name/:countryName">
+        <Route path="/country/*">
+          <NotFound />
+        </Route>
+        <Route path="/search/name/:countryName" exact>
           <Search />
         </Route>
         <Route path="*">

@@ -6,7 +6,7 @@ const NotFound = () => {
     return(
     <div>
         <Header />
-        <Alert variant="danger">
+        <Alert className="w-50 mx-auto" variant="danger">
         <h2>404 Not Found</h2>
         <p>Lo sentimos, el contenido solicitado no se encontró.</p>
         </Alert>

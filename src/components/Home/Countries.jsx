@@ -8,9 +8,11 @@ const Countries = () => {
 
     async function fetchData() {
         try {
-            const url = 'https://restcountries.eu/rest/v2/all';
+            const url = 'https://restcountries.com/v3/all';
             let response = await fetch(url).then((response) => response.json());
             setData(response);
+            // console.log(response);
+            console.log(response[0]);
         } catch(error) {
             console.log(error);
         }
@@ -22,7 +24,7 @@ const Countries = () => {
 
     return(
     <div ref={exampleRef} className="p-4 countries-container">
-        {data.slice(0, 24).map((item, key) => (<CardCountry key={item.numericCode} name={item.name} image={item.flag} alphaCode={item.alpha3Code} capital={item.capital} />))}
+        {data.slice(0, 24).map((item) => (<CardCountry key={item.cca3} name={item.name.common} image={item.flags[0]} alphaCode={item.cca3} capital={item.capital[0]} />))}
     </div>
     );
 }

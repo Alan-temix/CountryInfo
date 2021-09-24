@@ -26,13 +26,6 @@ const Header = () => {
         navbarScroll
         >
         <Nav.Link className="text-light" href="/">Home</Nav.Link>
-        <NavDropdown className="text-light" title="Secciones" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3">America</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">Europa</NavDropdown.Item>
-            <NavDropdown.Item href="#action5">Africa</NavDropdown.Item>
-            <NavDropdown.Item href="#action5">Asia</NavDropdown.Item>
-            <NavDropdown.Item href="#action5">Oceania</NavDropdown.Item>
-        </NavDropdown>
         </Nav>
         <Form className="d-flex" onSubmit={handleFormOnSubmit}>
         <FormControl

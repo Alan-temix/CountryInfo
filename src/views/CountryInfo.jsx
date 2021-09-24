@@ -7,13 +7,13 @@ import Header from "../components/Header";
 import CountryInfoFull from "../components/CountryInfo/CountryInfoFull";
 
 const CountryInfo = () => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(null);
     const { countryCode } = useParams();
 
     async function fetchData() {
-        const url = `https://restcountries.eu/rest/v2/alpha/${countryCode}`;
+        const url = `https://restcountries.com/v3/alpha/${countryCode}`;
         let response = await fetch(url).then((res) => res.json());
-        setData(response);
+        setData(response[0]);
     }
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const CountryInfo = () => {
     return(
         <div>
             <Header />
-            <CountryInfoFull data={data} />
+            {data ? <CountryInfoFull data={data} /> : ""}
         </div>
     )
 }
