@@ -24,7 +24,7 @@ const Countries = () => {
 
     return(
     <div ref={exampleRef} className="p-4 countries-container">
-        {data.slice(0, 24).map((item) => (<CardCountry key={item.cca3} name={item.name.common} image={item.flags[0]} alphaCode={item.cca3} capital={item.capital[0]} />))}
+        {data.slice(0, 24).map((item) => (<CardCountry key={item.cca3} name={item.name.common} image={item.flags[0]} alphaCode={item.cca3} capital={item.capital} />))}
     </div>
     );
 }

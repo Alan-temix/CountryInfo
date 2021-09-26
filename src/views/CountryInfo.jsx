@@ -23,7 +23,7 @@ const CountryInfo = () => {
     return(
         <div>
             <Header />
-            {data ? <CountryInfoFull data={data} /> : ""}
+            {!data ? <div className="px-5 mt-4">No se ha encontrado ningún país con el nombre "<span className="text-danger">{countryCode}</span>", verifica que lo hayas escrito correctamente</div> : <CountryInfoFull data={data} /> }
         </div>
     )
 }

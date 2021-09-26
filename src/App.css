@@ -58,12 +58,8 @@ nav.navbar button{
 
 .countryInfo-container {
   text-align: center;
-  width: 90%;
+  padding: 0 40px;
   margin: 0 auto;
-}
-
-.countryInfo-container img {
-  /* width: 100%; */
 }
 
 /*  */
@@ -126,6 +122,10 @@ nav.navbar button{
   .countries-container {
     display: flex;
     flex-direction: column;
+  }
+
+  .countryInfo-container .card {
+    flex-direction: column !important;
   }
 }
 
