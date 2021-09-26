@@ -18,7 +18,7 @@ const CountryInfo = () => {
 
     useEffect(() => {
         fetchData();
-    }, [])
+    }, [fetchData])
 
     return(
         <div>

@@ -19,7 +19,7 @@ const Search = () => {
 
     useEffect(() => {
         fetchData();
-    }, [countryName]);
+    }, [countryName, fetchData]);
 
     return(
     <div>
