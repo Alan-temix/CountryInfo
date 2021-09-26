@@ -7,19 +7,18 @@ const Search = () => {
     const [data, setData] = useState([]);
     const { countryName } = useParams();
 
-    async function fetchData() {
-        try {
-            const url = `https://restcountries.com/v3/name/${countryName}`;
-            const response = await fetch(url).then(res => res.json())
-            setData(response);
-        } catch(error) {
-            console.log(error);
-        }
-    }
-
     useEffect(() => {
+        async function fetchData() {
+            try {
+                const url = `https://restcountries.com/v3/name/${countryName}`;
+                const response = await fetch(url).then(res => res.json())
+                setData(response);
+            } catch(error) {
+                console.log(error);
+            }
+        }
         fetchData();
-    }, [countryName, fetchData]);
+    }, [countryName]);
 
     return(
     <div>

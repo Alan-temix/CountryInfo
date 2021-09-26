@@ -10,15 +10,14 @@ const CountryInfo = () => {
     const [data, setData] = useState(null);
     const { countryCode } = useParams();
 
-    async function fetchData() {
-        const url = `https://restcountries.com/v3/alpha/${countryCode}`;
-        let response = await fetch(url).then((res) => res.json());
-        setData(response[0]);
-    }
-
     useEffect(() => {
+        async function fetchData() {
+            const url = `https://restcountries.com/v3/alpha/${countryCode}`;
+            let response = await fetch(url).then((res) => res.json());
+            setData(response[0]);
+        }
         fetchData();
-    }, [fetchData])
+    }, [countryCode])
 
     return(
         <div>

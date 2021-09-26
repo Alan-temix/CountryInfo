@@ -51,7 +51,7 @@ const CountryInfoFull = ({ data }) => {
                         <div>
                             <Card.Text className="d-block m-0"><b>Area: </b>{data.area}</Card.Text>
                             {data.currencies && Object.values(data.currencies).map((item, index) => (<Card.Text className="m-0" key={index}><b>Currencies: </b>{`${item.name} "${item.symbol}"`} </Card.Text>))}
-                            <Card.Text className="m-0"><b>Borders: </b>{data.borders ? data.borders.map((item, index) => (<span className="text-decoration-none" key={index} alt={index}>{data.borders.length === 1 ? <Card.Link className="text-decoration-none" href={`/country/${item}`}>{item}</Card.Link> : index === data.borders.length - 1 ? <Card.Link href={`/country/${item}`}>{`${item}.`}</Card.Link> : <Card.Link href={`/country/${item}`}>{`${item}, `}</Card.Link>}</span>)) : "No borders"}</Card.Text>
+                            <Card.Text className="m-0"><b>Borders: </b>{data.borders ? data.borders.map((item, index) => (<span className="text-decoration-none" key={index} alt={index}>{data.borders.length === 1 ? <Card.Link className="text-decoration-none" href={`/country/${item}`} key={index}>{item}</Card.Link> : index === data.borders.length - 1 ? <Card.Link href={`/country/${item}`} key={index}>{`${item}.`}</Card.Link> : <Card.Link href={`/country/${item}`} key={index}>{`${item}, `}</Card.Link>}</span>)) : "No borders"}</Card.Text>
                         </div>
                         <div >
                             <Card.Text className="d-block m-0"><b>Languages: </b></Card.Text>
