@@ -38,7 +38,7 @@ const CountryInfoFull = ({ data }) => {
             <Card.Body style={{flexShrink: 1}}>
                     <Card.Title style={{textAlign: "center"}}><b>Common name: </b>{data.name.common}</Card.Title>
                     <Card.Title style={{textAlign: "center"}}><b>Capital: </b>{data.capital && data.capital[0].length ? data.capital[0] : "This Country Doesn't have Capital"}</Card.Title>
-                    {weatherDetails && <div><Card.Text><FontAwesomeIcon icon={faCloud} /> Current Weather: {capitalizeFirstLetter(weatherDetails.weather[0].description)} <FontAwesomeIcon icon={faCloud} /></Card.Text> <Card.Text><FontAwesomeIcon icon={faTint} /> Humidity: {weatherDetails.main.humidity} <FontAwesomeIcon icon={faTint} /></Card.Text> <Card.Text><FontAwesomeIcon icon={faRulerVertical} /> Pressure: {weatherDetails.main.pressure}.<FontAwesomeIcon icon={faRulerVertical} /></Card.Text> <Card.Text> <FontAwesomeIcon icon={faWater} /> Sea Level : {weatherDetails.main.sea_level}. <FontAwesomeIcon icon={faWater} /></Card.Text> <Card.Text> <FontAwesomeIcon icon={faTemperatureHigh} /> Temperature: {kelvinToCelcius(weatherDetails.main.temp)} <FontAwesomeIcon icon={faTemperatureHigh} /></Card.Text></div>}
+                    {weatherDetails && <div><Card.Text><FontAwesomeIcon icon={faCloud} /> Current Weather: {capitalizeFirstLetter(weatherDetails.weather[0].description)} <FontAwesomeIcon icon={faCloud} /></Card.Text> <Card.Text><FontAwesomeIcon icon={faTint} /> Humidity: {weatherDetails.main.humidity} <FontAwesomeIcon icon={faTint} /></Card.Text> <Card.Text><FontAwesomeIcon icon={faRulerVertical} /> Pressure: {weatherDetails.main.pressure}.<FontAwesomeIcon icon={faRulerVertical} /></Card.Text> <Card.Text> <FontAwesomeIcon icon={faWater} /> Sea Level : {weatherDetails.main.sea_level ? weatherDetails.main.sea_level : "Info No Available"}. <FontAwesomeIcon icon={faWater} /></Card.Text> <Card.Text> <FontAwesomeIcon icon={faTemperatureHigh} /> Temperature: {kelvinToCelcius(weatherDetails.main.temp)} <FontAwesomeIcon icon={faTemperatureHigh} /></Card.Text></div>}
                     <Card.Body style={{flexDirection: "column", border: "1px solid gray", padding: 10, marginTop: 10}}  className="d-flex justify-content-between p-t-2">
                         <div>
                             <Card.Text className="m-0"><b>Region: </b>{data.region}</Card.Text>
@@ -58,7 +58,7 @@ const CountryInfoFull = ({ data }) => {
                     </Card.Body>
             </Card.Body>
             </Card>
-            <Card.Link href="/" className="text-dark text-decoration-none"><FontAwesomeIcon icon={faHome} color="black" size="lg" /> Home</Card.Link>
+            <Card.Link href="/" className="text-dark text-decoration-none"><FontAwesomeIcon className="mt-3" icon={faHome} color="black" size="2x" /><Card.Text className="m-0">Home</Card.Text></Card.Link>
         </div>
     );
 }

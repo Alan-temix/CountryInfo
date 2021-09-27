@@ -1,19 +1,22 @@
 import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 
-const CardCountry = ({ name, image, alphaCode, capital }) => {
+const CardCountry = ({ name, image, alphaCode, capital, region, area, latitude, longitude }) => {
 
     return(
         <Card>
-        <Card.Img variant="top" src={image}/>
-            <Card.Body>
-                <Card.Title>{name} Capital: {capital && capital.length > 0 ? capital : "N/A"}</Card.Title>
-                <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                </Card.Text>
-                <Link to={`/country/${alphaCode}`}><Button variant="primary">Ver más</Button></Link>
-            </Card.Body>
+        <div>
+            <Card.Img className="h-100" style={{width:"200px"}} variant="top" src={image}/>
+        </div>
+        <Card.Body>
+            <Card.Title>Name: {name}</Card.Title>
+            <Card.Title>Capital: {capital && capital.length > 0 ? capital : "N/A"}</Card.Title>
+            <Card.Text className="m-1"><b>Region: </b>{region}</Card.Text>
+            <Card.Text className="m-1"><b>Area: </b>{area}</Card.Text>
+            <Card.Text className="m-1"><b>Latitude: </b>{latitude}</Card.Text>
+            <Card.Text className="m-1"><b>Longitude: </b>{longitude}</Card.Text>
+            <Link to={`/country/${alphaCode}`}><Button variant="primary">Ver más</Button></Link>
+        </Card.Body>
         </Card>
     );
 }
