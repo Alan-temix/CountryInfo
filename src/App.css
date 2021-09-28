@@ -127,6 +127,10 @@ nav.navbar button {
   .countryInfo-container .card {
     flex-direction: column !important;
   }
+
+  .countryInfo-container .w-md-100 {
+    width: 100% !important;
+  }
 }
 
 @keyframes App-logo-spin {

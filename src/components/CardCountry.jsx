@@ -5,7 +5,7 @@ const CardCountry = ({ name, image, alphaCode, capital, region, area, latitude, 
 
     return(
         <Card>
-        <div style={{width:"50%"}}>
+        <div className="w-50">
             <Card.Img className="h-100" variant="top" src={image}/>
         </div>
         <Card.Body>
