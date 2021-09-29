@@ -1,36 +1,41 @@
-//Package
-import React, { BrowserRouter, Switch, Route } from "react-router-dom";
-
-//Views
-import Home from "./views/Home";
-import CountryInfo from "./views/CountryInfo";
-import NotFound from "./views/NotFound";
-import Search from "./views/Search";
-
-//Components
-// ####
+import React, { lazy, Suspense } from "react";
 
 // Styles
 import './App.css';
+
+//Package
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Loading from "./components/Loading";
+
+//Lazy Views
+const Home = lazy(() => import('./views/Home'));
+const CountryInfo = lazy(() => import('./views/CountryInfo'));
+const NotFound = lazy(() => import('./views/NotFound'));
+const Search = lazy(() => import('./views/Search'));
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/" exact>
-          <Home />
+          <Suspense fallback={<Loading />}>
+            <Home />
+          </Suspense>
         </Route>
         <Route path="/country/:countryCode" exact>
-          <CountryInfo />
-        </Route>
-        <Route path="/country/*">
-          <NotFound />
+          <Suspense fallback={<Loading />}>
+            <CountryInfo />
+          </Suspense>
         </Route>
         <Route path="/search/name/:countryName" exact>
-          <Search />
+          <Suspense fallback={<Loading />}>
+            <Search />
+          </Suspense>
         </Route>
         <Route path="*">
-          <NotFound />
+          <Suspense fallback={<Loading />}>
+            <NotFound />
+          </Suspense>
         </Route>
       </Switch>
    </BrowserRouter>

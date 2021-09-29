@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
-// 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faTemperatureHigh, faCloud, faTint, faWater, faRulerVertical} from '@fortawesome/free-solid-svg-icons'
 
