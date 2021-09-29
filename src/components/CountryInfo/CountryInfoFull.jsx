@@ -25,7 +25,6 @@ const CountryInfoFull = ({ data }) => {
 
                 const d = await fetch(url).then(res => res.json());
                 setWeatherDetails(d)
-                console.log(weatherDetails);
             })();
         }
     }, [])
