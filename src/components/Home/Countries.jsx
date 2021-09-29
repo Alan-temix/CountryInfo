@@ -11,7 +11,6 @@ const Countries = () => {
             const url = 'https://restcountries.com/v3/all';
             let response = await fetch(url).then((response) => response.json());
             setData(response);
-            console.log(response[0]);
         } catch(error) {
             console.log(error);
         }

@@ -27,7 +27,7 @@ const CountryInfoFull = ({ data }) => {
                 setWeatherDetails(d)
             })();
         }
-    }, [])
+    }, [data])
 
     return(
         <div className="countryInfo-container">
