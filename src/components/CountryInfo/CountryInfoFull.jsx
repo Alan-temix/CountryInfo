@@ -34,13 +34,13 @@ const CountryInfoFull = ({ data }) => {
             <h3>Country: {data.name.official}</h3>
             <Card className="d-flex flex-row">
             <div className="w-50 w-md-100">
-                <Card.Img className="border border-secondary h-100" variant="top" src={data.flags[0]} />
+                <Card.Img className="h-100" variant="top" src={data.flags[0]} />
             </div>
             <Card.Body>
                     <Card.Title className="text-center"><b>Common name: </b>{data.name.common}</Card.Title>
                     <Card.Title className="text-center"><b>Capital: </b>{data.capital && data.capital[0].length ? data.capital[0] : "This Country Doesn't have Capital"}</Card.Title>
-                    {weatherDetails && <div><Card.Text><FontAwesomeIcon icon={faCloud} /> Current Weather: {capitalizeFirstLetter(weatherDetails.weather[0].description)} <FontAwesomeIcon icon={faCloud} /></Card.Text> <Card.Text><FontAwesomeIcon icon={faTint} /> Humidity: {weatherDetails.main.humidity} <FontAwesomeIcon icon={faTint} /></Card.Text> <Card.Text><FontAwesomeIcon icon={faRulerVertical} /> Pressure: {weatherDetails.main.pressure}.<FontAwesomeIcon icon={faRulerVertical} /></Card.Text> <Card.Text> <FontAwesomeIcon icon={faWater} /> Sea Level : {weatherDetails.main.sea_level ? weatherDetails.main.sea_level : "Info No Available"}. <FontAwesomeIcon icon={faWater} /></Card.Text> <Card.Text> <FontAwesomeIcon icon={faTemperatureHigh} /> Temperature: {kelvinToCelcius(weatherDetails.main.temp)} <FontAwesomeIcon icon={faTemperatureHigh} /></Card.Text></div>}
-                    <Card.Body style={{flexDirection: "column", border: "1px solid gray", padding: 10, marginTop: 10}}  className="d-flex justify-content-between p-t-2 text-center">
+                    {weatherDetails && <div><Card.Text><FontAwesomeIcon icon={faCloud} /> <b>Current Weather: </b>{capitalizeFirstLetter(weatherDetails.weather[0].description)} <FontAwesomeIcon icon={faCloud} /></Card.Text> <Card.Text><FontAwesomeIcon icon={faTint} /> <b>Humidity: </b>{weatherDetails.main.humidity} <FontAwesomeIcon icon={faTint} /></Card.Text> <Card.Text><FontAwesomeIcon icon={faRulerVertical} /> <b>Pressure: </b>{weatherDetails.main.pressure}.<FontAwesomeIcon icon={faRulerVertical} /></Card.Text> <Card.Text> <FontAwesomeIcon icon={faWater} /> <b>Sea Level: </b>{weatherDetails.main.sea_level ? weatherDetails.main.sea_level : "Info No Available"}. <FontAwesomeIcon icon={faWater} /></Card.Text> <Card.Text> <FontAwesomeIcon icon={faTemperatureHigh} /> <b>Temperature: </b>{kelvinToCelcius(weatherDetails.main.temp)} <FontAwesomeIcon icon={faTemperatureHigh} /></Card.Text></div>}
+                    <Card.Body style={{flexDirection: "column", padding: 10, marginTop: 10}}  className="d-flex justify-content-between p-t-2 text-center">
                         <div>
                             <Card.Text className="m-0"><b>Region: </b>{data.region}</Card.Text>
                             <Card.Text className="m-0"><b>Subregion: </b>{data.subregion}</Card.Text>                            

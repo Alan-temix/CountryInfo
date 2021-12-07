@@ -1,7 +1,5 @@
 body {
   /* padding: 10px 20px; */
-  background: rgb(62,0,255);
-  background: linear-gradient(90deg, rgba(62,0,255,1) 0%, rgba(2,111,162,1) 72%); 
 }
 
 .App {
@@ -15,7 +13,7 @@ body {
 
 /* Customize */
 nav.navbar {
-  background-color: #170055 !important;
+  color: black;
 }
 
 .nav-item > a {
@@ -38,7 +36,8 @@ nav.navbar button {
 .countries-container {
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(0, auto) minmax(0, auto) minmax(0, auto);
+  /* grid-template-columns: minmax(0, auto) minmax(0, auto) minmax(0, auto); */
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px 10px;
 }
 
@@ -62,27 +61,6 @@ nav.navbar button {
   margin: 0 auto;
 }
 
-/*  */
-.custom-shape-divider-top-1631592232 {
-  top: 0;
-  background: rgb(62,0,255);
-  background: linear-gradient(90deg, rgba(62,0,255,1) 0%, rgba(2,111,162,1) 72%); 
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-top-1631592232 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 18px;
-}
-
-.custom-shape-divider-top-1631592232 .shape-fill {
-  fill: #170055;
-}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -97,7 +75,7 @@ nav.navbar button {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
