@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from "react";
+import { CountryListProvider } from './components/context/countryList';
 
 // Styles
 import './App.css';
@@ -16,6 +17,7 @@ const Search = lazy(() => import('./views/Search'));
 function App() {
   return (
     <BrowserRouter>
+    <CountryListProvider>
       <Switch>
         <Route path="/" exact>
           <Suspense fallback={<Loading />}>
@@ -38,6 +40,7 @@ function App() {
           </Suspense>
         </Route>
       </Switch>
+    </CountryListProvider>
    </BrowserRouter>
   );
 }
