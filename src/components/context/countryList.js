@@ -3,19 +3,22 @@ import { createContext } from 'react';
 const CountryList = createContext();
 
 const CountryListProvider = ({children}) => {
+    let result = [];
+    let data;
+
     async function fetchData() {
-        try {
-            const url = 'https://restcountries.com/v3/all';
-            let response = await fetch(url).then((response) => response.json());
-            const result = await response.map((item) => item.name.common);
-            return result;
-        } catch(err) {
-            console.log(err);
-        }
+        const url = 'https://restcountries.com/v3/all';
+        let response = await fetch(url).then(r => r.json());
+        const result = await response.map((item) => item.name.common);
+        return result;
     }
 
-    const result = fetchData();
-    const data = { result }
+    if(result.length === 0) {
+        // result = fetchData();
+        result = fetchData();
+        data = { result }
+    }
+
 
     return(
         <CountryList.Provider value={data}>

@@ -16,8 +16,6 @@ const Countries = () => {
         }
     }
 
-    console.log(data);
-
     useEffect(() => {
         fetchData();
     }, [])
