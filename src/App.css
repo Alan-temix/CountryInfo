@@ -42,8 +42,8 @@ nav.navbar button {
 }
 
 .countries-container .card {
-  background-color: #150050;
-  color: white;
+  background-color: inherit;
+  color: black;
 }
 
 .countries-container button {
