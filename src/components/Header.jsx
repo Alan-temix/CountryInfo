@@ -28,6 +28,7 @@ const Header = () => {
                     ){
                       return element;
                     }
+                    return null;
                   });
                 setOptions(result);
             }
